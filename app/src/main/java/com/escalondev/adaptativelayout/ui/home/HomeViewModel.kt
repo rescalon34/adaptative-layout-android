@@ -10,7 +10,7 @@ class HomeViewModel : ViewModel() {
             add(
                 SpaceItem(
                     "Comet C",
-                    "Imaged on June 20 2022, comet C/2017 K2 (PanSTARRS) shares this wide telescopic field of view with open star cluster IC 4665 and bright star Beta Ophiuchi, near a starry edge of the Milky Way. ",
+                    "Imaged on June 20 2022, comet C/2017 K2 (PanSTARRS) shares this wide telescopic field of view with open star cluster IC 4665 and bright star Beta Ophiuchi, near a starry edge of the Milky Way.",
                     "2022-06-30",
                     "https://apod.nasa.gov/apod/image/2206/2017K2_2022-06-20_media.jpg"
                 )

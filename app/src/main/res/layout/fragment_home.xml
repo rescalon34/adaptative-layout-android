@@ -10,24 +10,28 @@
             type="com.escalondev.adaptativelayout.ui.home.HomeViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.slidingpanelayout.widget.SlidingPaneLayout
+        android:id="@+id/sliding_pane_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/dividerGrayColor"
-        android:paddingTop="8dp">
+        android:background="@color/dividerGrayColor">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_home"
-            android:layout_width="0dp"
+            android:layout_width="550dp"
             android:layout_height="match_parent"
+            android:clipToPadding="false"
             android:orientation="vertical"
+            android:paddingTop="8dp"
             android:textAlignment="center"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/item_space_images" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/detail_content"
+            android:name="com.escalondev.adaptativelayout.ui.detail.DetailFragment"
+            android:layout_width="300dp"
+            android:layout_height="match_parent" />
+
+    </androidx.slidingpanelayout.widget.SlidingPaneLayout>
 </layout>

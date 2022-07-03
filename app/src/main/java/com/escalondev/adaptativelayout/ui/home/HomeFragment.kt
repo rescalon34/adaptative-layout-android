@@ -1,10 +1,11 @@
 package com.escalondev.adaptativelayout.ui.home
 
-import com.escalondev.adaptativelayout.BR
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.escalondev.adaptativelayout.BR
 import com.escalondev.adaptativelayout.R
 import com.escalondev.adaptativelayout.databinding.FragmentHomeBinding
 import com.escalondev.adaptativelayout.model.SpaceItem
@@ -16,6 +17,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
 ) {
 
     override val viewModel: HomeViewModel by viewModels()
+    private val mainSharedViewModel: MainSharedViewModel by activityViewModels()
     private lateinit var adapter: HomeAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -31,6 +33,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
 
     private fun onSpaceItemClicked() = OnItemClickListener { item ->
         val spaceItem = item as SpaceItem
-        Toast.makeText(requireContext(), "item: ${spaceItem.title}", Toast.LENGTH_SHORT).show()
+        mainSharedViewModel.detailSpaceItem.value = spaceItem
+        findNavController().navigate(R.id.action_fragmentHome_to_detailFragment)
     }
 }
