@@ -31,7 +31,9 @@
             android:id="@+id/detail_content"
             android:name="com.escalondev.adaptativelayout.ui.detail.DetailFragment"
             android:layout_width="300dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_detail" />
 
     </androidx.slidingpanelayout.widget.SlidingPaneLayout>
 </layout>

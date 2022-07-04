@@ -9,6 +9,7 @@ import com.escalondev.adaptativelayout.R
 import com.escalondev.adaptativelayout.databinding.FragmentDetailBinding
 import com.escalondev.adaptativelayout.ui.base.BaseFragment
 import com.escalondev.adaptativelayout.ui.home.MainSharedViewModel
+import com.escalondev.adaptativelayout.util.EventObserver
 
 class DetailFragment : BaseFragment<FragmentDetailBinding>(
     R.layout.fragment_detail, BR.viewModel
@@ -19,6 +20,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mainSharedViewModel.detailSpaceItem.value?.let { viewModel.setDetailItem(it) }
+        mainSharedViewModel.detailSpaceItem.observe(viewLifecycleOwner, EventObserver {
+            viewModel.setDetailItem(it)
+        })
     }
 }
