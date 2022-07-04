@@ -2,7 +2,7 @@
 This project demonstrate the usage of Adaptive Layouts on an Android project, using the [SlidingPaneLayout pattern](https://developer.android.com/reference/androidx/slidingpanelayout/widget/SlidingPaneLayout)
 to adapt the layout across many different screen sizes
 
-#### Single Screen device.
+#### Single Pane Screen:
 
 ![image](https://user-images.githubusercontent.com/52270734/177067929-7da07f0d-df67-4af3-bab0-e50948a8c2dd.png)
 ![image](https://user-images.githubusercontent.com/52270734/177067966-66f99664-44f1-436b-8a99-330f903a6b3c.png)
