@@ -25,6 +25,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         super.onViewCreated(view, savedInstanceState)
         registerCustomBackCallback()
         setupAdapter()
+        mainSharedViewModel.detailSpaceItem.value = Event(viewModel.getSpaceItemList().first())
     }
 
     private fun registerCustomBackCallback() {
